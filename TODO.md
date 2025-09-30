@@ -1,0 +1,3 @@
+- [x] Update email container class in ContactSection.jsx
+- [x] Update phone container class in ContactSection.jsx
+- [x] Update location container class in ContactSection.jsx
