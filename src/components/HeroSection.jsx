@@ -82,7 +82,7 @@ const HeroSection = () => {
         <div className="space-y-6 sm:space-y-8 md:space-y-10">
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in">Hi, I'm </span>
-            <span className="bg-[#CCFF00] px-3 rounded-2xl inline-block">
+            <span className="lg:bg-[#CCFF00] lg:p-3 lg:rounded-2xl inline-block">
               <span className="text-primary opacity-0 animate-slide-in-left-delay-1">
                 Venkateswara Reddy{" "}
               </span>

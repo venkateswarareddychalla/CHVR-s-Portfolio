@@ -122,7 +122,7 @@ const SkillsSection = () => {
   );
 
   return (
-    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
+    <section id="skills" className="py-24 relative bg-secondary/30">
       <div className="container mx-auto max-w-7xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           My <span className="text-primary">Skills</span>
@@ -134,10 +134,10 @@ const SkillsSection = () => {
               key={key}
               onClick={() => setActiveCategory(category)}
               className={cn(
-                "px-4 sm:px-5 py-2 rounded-full transition-colors duration-300 capitalize text-sm sm:text-base",
+                "px-4 sm:px-5 py-2 rounded-full transition-colors duration-300 capitalize text-sm sm:text-base border",
                 activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary"
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-transparent text-foreground hover:bg-secondary border-primary/30"
               )}
             >
               {category}

@@ -110,9 +110,9 @@ const AboutMe = () => {
           About <span className="text-primary">Me</span>
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-start">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
           {/* Left: Text */}
-          <div className="md:w-1/2 space-y-6 text-center md:text-left">
+          <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
             <h3 className="text-2xl font-semibold">
               Passionate Full Stack Web Developer
             </h3>
@@ -138,16 +138,16 @@ const AboutMe = () => {
           </div>
 
           {/* Right: Cards */}
-          <div className="md:w-1/2 grid grid-cols-1 gap-6">
+          <div className="lg:w-1/2 grid grid-cols-1 gap-6">
             {cards.map((card, idx) => (
               <div
                 key={idx}
-                className="flex gap-6 items-start p-4 rounded-xl bg-card shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="flex flex-col md:flex-col lg:flex-row gap-6 items-start p-4 rounded-xl bg-card shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="p-4 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="p-4 rounded-full bg-primary/10 flex items-center justify-center self-center lg:self-start">
                   {card.icon}
                 </div>
-                <div className="text-left">
+                <div className="text-center lg:text-left">
                   <h4 className="font-semibold text-lg mb-1">{card.title}</h4>
                   <p className="text-muted-foreground text-sm">{card.desc}</p>
                 </div>

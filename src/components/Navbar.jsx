@@ -96,6 +96,7 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -126,7 +127,7 @@ const Navbar = () => {
           : "py-5"
       )}
     >
-      <div className="container flex items-center justify-between px-4 md:px-0">
+      <div className="container flex items-center justify-between px-4 lg:px-12">
         <a
           href="#hero"
           className="text-xl font-bold text-primary flex items-center "
@@ -138,7 +139,7 @@ const Navbar = () => {
         </a>
 
         {/* desktop nav */}
-        <div className="hidden md:flex space-x-8 text-sm md:text-base lg:text-lg">
+        <div className="hidden md:flex items-center space-x-8 text-sm md:text-base lg:text-lg">
           {navItems.map((item, key) => (
             <a
               key={key}
@@ -148,6 +149,7 @@ const Navbar = () => {
               {item.name}
             </a>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* mobile nav button */}
@@ -162,10 +164,10 @@ const Navbar = () => {
         {/* mobile menu overlay */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center transition-all duration-300 md:hidden px-4",
+            "fixed top-0 right-0 w-full max-w-sm h-screen bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center transition-all duration-300 md:hidden px-4",
             isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+              ? "translate-x-0 opacity-100 pointer-events-auto"
+              : "translate-x-full opacity-0 pointer-events-none"
           )}
         >
           <div className="flex flex-col space-y-6 sm:space-y-8 text-xl sm:text-2xl text-center">
@@ -179,6 +181,9 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
+            <div className="mt-4">
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
