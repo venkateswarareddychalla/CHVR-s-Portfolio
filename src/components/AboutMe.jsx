@@ -18,7 +18,7 @@ const AboutMe = () => {
     {
       icon: <Briefcase className="h-6 w-6 text-primary" />,
       title: "Project Management",
-      desc: "Planning, organizing, and delivering web projects efficiently, ensuring timelines, quality, and client satisfaction.",
+      desc: "Plans, organizes, and executes projects efficiently, managing Git workflows, Postman testing, and deployment processes.",
     },
   ];
 
