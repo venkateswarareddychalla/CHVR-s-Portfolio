@@ -110,7 +110,7 @@ const AboutMe = () => {
           About <span className="text-primary">Me</span>
         </h2>
 
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center lg:items-start">
           {/* Left: Text */}
           <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
             <h3 className="text-2xl font-semibold">
