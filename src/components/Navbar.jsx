@@ -10,16 +10,28 @@ const navItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
+      // Determine active section based on scroll position
+      const sections = navItems.map(item => item.href.substring(1));
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -51,7 +63,12 @@ const Navbar = () => {
             <a
               key={key}
               href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              className={cn(
+                "transition-colors duration-300",
+                activeSection === item.href.substring(1)
+                  ? "text-primary font-semibold"
+                  : "text-foreground/80 hover:text-primary"
+              )}
             >
               {item.name}
             </a>
@@ -82,7 +99,12 @@ const Navbar = () => {
               <a
                 key={key}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                className={cn(
+                  "transition-colors duration-300",
+                  activeSection === item.href.substring(1)
+                    ? "text-primary font-semibold"
+                    : "text-foreground/80 hover:text-primary"
+                )}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

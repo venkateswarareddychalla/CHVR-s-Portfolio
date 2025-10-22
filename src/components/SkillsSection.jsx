@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { cn } from "../lib/utils";
 import {
@@ -43,7 +42,7 @@ const skills = [
   { name: "VS Code", level: 90, category: "tools", icon: Monitor, color: "#007ACC" },
   { name: "Postman", level: 70, category: "tools", icon: Send, color: "#FF6C37" },
   { name: "Render", level: 80, category: "tools", icon: Cloud, color: "#46E3B7" },
-  { name: "Vercel", level: 80, category: "tools", icon: Triangle, color: "#000000" },
+  { name: "Vercel", level: 80, category: "tools", icon: Triangle, color: "#8E8E8E" },
 ];
 
 const categories = ["all", "frontend", "backend", "languages", "tools"];
